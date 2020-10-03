@@ -1,0 +1,9 @@
+# Deployment directories
+node_modules
+public
+
+# Optional npm cache directory
+.npm
+
+# Mac
+.DS_Store
