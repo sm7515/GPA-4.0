@@ -2,6 +2,9 @@
 node_modules
 public
 
+# env
+.evn
+
 # Optional npm cache directory
 .npm
 

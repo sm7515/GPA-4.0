@@ -1,32 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiUrl, baseUrl } from '../../../config';
+import Dropdown from '../Dropdown';
 import './index.css';
 
 export default function Login() {
-  const handleSubmit = (e) => {
-    const username = e.currentTarget.username.value;
-    e.preventDefault();
+  const [selected, setSelected] = useState({ value: '', id: -1 });
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
     axios
-      .post(`${apiUrl}/login`, { username })
+      .get(`${apiUrl}/getClasses`)
       .then((res) => {
-        const role = res.data;
-        const url = role === 'admin' ? 'admin' : 'course';
-        window.location.replace(`${baseUrl}/${url}`);
+        const allClasses = [...res.data];
+        setClasses(allClasses);
       })
       .catch((err) => {
-        console.log(err);
-        err.response && alert(err.response.data);
+        alert(err);
       });
+  }, []);
+
+  const handleSubmit = (e) => {
+    if (selected.id === -1) alert('请输入班级哦 \uD83D\uDE0A');
+    else {
+      const username = e.currentTarget.username.value;
+      e.preventDefault();
+      axios
+        .post(`${apiUrl}/login`, { username, classId: selected.id })
+        .then((res) => {
+          console.log(res);
+          const role = res.data;
+          const url = role === 'admin' ? 'admin' : 'course';
+          console.log(`${baseUrl}/${url}`);
+          window.location.replace(`${baseUrl}/${url}`);
+        })
+        .catch((err) => {
+          console.log(err);
+          err.response && alert(err.response.data);
+        });
+    }
   };
+
   return (
     <form onSubmit={(e) => handleSubmit(e)} className='form login'>
       <div className='form__field'>
         <label htmlFor='NetId'>
-          <img
-            className='icon'
-            src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'
-          />
+          <span className='material-icons icon'>perm_identity</span>
         </label>
         <input
           id='username'
@@ -37,6 +56,12 @@ export default function Login() {
           required
         />
       </div>
+      <Dropdown
+        setSelected={setSelected}
+        items={classes}
+        title='班级'
+        label={true}
+      />
       <div className='form__field'>
         <input type='submit' value='Sign In' />
       </div>

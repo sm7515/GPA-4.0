@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import history from '../history';
 import '../styles.css';
 
 import Login from './Login';
@@ -11,8 +10,8 @@ import Admin from './Admin';
 export default function App() {
   return (
     <div className='app'>
-      <Router history={history}>
-        <Route path='/'>
+      <Router>
+        <Route path={['/', '/app/']}>
           {Cookies.get('username') ? (
             Cookies.get('role') === 'admin' ? (
               <Redirect to='/app/admin' />

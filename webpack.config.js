@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'js', 'index.js'),
@@ -26,7 +27,10 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   devServer: {
     contentBase: './public',
     hot: true,

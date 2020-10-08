@@ -1,0 +1,159 @@
+.admin.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.admin.nav {
+  background-color: #363b41;
+  color: #eee;
+  display: flex;
+  align-items: baseline;
+  max-height: 5.5rem;
+  padding: 0 1rem;
+}
+.admin.nav-item.tab,
+.admin.nav-item button.logout {
+  padding: 1rem 4rem;
+  border: none;
+  outline: none;
+}
+
+.admin.nav-item.logout {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.admin.nav-item button.logout:hover,
+.admin.nav-item button.logout:focus {
+  background-color: #434a52;
+  color: #eee;
+}
+
+.admin.nav-item.tab:hover {
+  background-color: #434a52;
+  color: #eee;
+}
+
+.class-col button.selected,
+.class-col button:hover,
+.admin.nav-item.tab.selected {
+  color: #434a52;
+  background-color: #eee;
+}
+
+.update-score button:hover,
+.update-score button:focus .update-score input:hover,
+.update-score input:focus,
+.update-course button[type='submit']:hover,
+.update-course button[type='submit']:focus {
+  background-color: #434a52;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.class-col {
+  display: flex;
+  flex-direction: column;
+  flex: 0.2;
+  padding: 2rem 0;
+  justify-content: flex-start;
+  background-color: #363b41;
+}
+
+.class-col button,
+.update-score button[type='submit'],
+.update-course button[type='submit'] {
+  outline: none;
+  border: none;
+  color: #eee;
+  background-color: #363b41;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.update-score {
+  flex: 0.7;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 5rem 1rem;
+  justify-content: center;
+  transform: none;
+}
+
+.update-score input {
+  background: #363b41;
+  color: #eee;
+  padding: 1rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+}
+
+.update-score button[type='submit'],
+.update-course button[type='submit'] {
+  padding: 1rem;
+  color: #eee;
+  border-radius: 5px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+.update-course {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.update-course .form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transform: none;
+}
+
+.update-course .form__field {
+  max-height: 5rem;
+  align-items: baseline;
+}
+
+.update-course .form__field label {
+  margin: 0 0.875rem;
+}
+
+.update-course .form__field input,
+.update-course .form__field textarea {
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0.875rem;
+  flex: 1;
+}
+
+.form__field span.category {
+  color: #eee;
+}
+
+@media only screen and (max-width: 600px) {
+  .admin.nav-item,
+  .admin.nav-item.tab,
+  .admin.nav-item.logout button.logout {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-size: 12px;
+  }
+
+  .admin.nav-item.logout button.logout {
+    top: 1.5rem;
+  }
+  .update-score {
+    flex: 1;
+  }
+}
