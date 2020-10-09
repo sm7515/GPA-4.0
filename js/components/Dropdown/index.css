@@ -8,7 +8,7 @@
 }
 
 .dd-label {
-  background-color: #363b41;
+  background-color: #295280;
   border-radius: 0.25rem;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -23,7 +23,7 @@
   align-items: center;
   cursor: pointer;
   width: 100%;
-  background-color: #3b4148;
+  background-color: #295293;
   border-radius: 0.25rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -33,11 +33,12 @@
 .dd-header:hover,
 .dd-header:focus {
   cursor: pointer;
-  background-color: #434a52;
+  background-color: #295280;
 }
 
 .dd-header__title--placeholder {
-  color: #8e8e8e;
+  color: #eee;
+  opacity: 0.8;
 }
 
 .dd-list {
@@ -47,26 +48,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  transition: all 200ms linear;
   overflow-y: scroll;
-  height: 150px;
-}
-
-.dd-list {
-  opacity: 0.3;
-  -webkit-transform-origin: top;
-  transform-origin: top;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-transform: scale(1, 0);
-  transition: all 0.2s linear;
-  -webkit-transition: all 0.2s linear;
-}
-
-.dd-list.show {
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-  opacity: 1;
 }
 
 .dd-container li {
@@ -85,13 +67,13 @@
 }
 
 .dd-container button {
-  background-color: #3b4148;
+  background-color: #295293;
   box-sizing: border-box;
   font-size: 16px;
   color: #eee;
   padding: 1rem;
   border: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   width: 100%;
   outline: none !important;
   text-align: left;
@@ -101,5 +83,5 @@
 .dd-container button:focus {
   cursor: pointer;
   font-weight: bold;
-  background-color: #434a52;
+  background-color: #295280;
 }

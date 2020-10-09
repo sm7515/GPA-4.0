@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import onClickOutside from 'react-onclickoutside';
+import { Spring, animated } from 'react-spring/renderprops';
 import './index.css';
 
 function Dropdown({ setSelected, title, items, label, clear }) {
@@ -60,21 +61,33 @@ function Dropdown({ setSelected, title, items, label, clear }) {
       </div>
 
       {
-        <ul className={`dd-list ${open ? 'show' : ''}`}>
-          {items.map((item) => (
-            <li className='dd-list-item' key={item.id}>
-              <button type='button' onClick={() => handleOnClick(item)}>
-                <span
-                  className={`dd-list-item ${
-                    item.id === selection.id && 'selected'
-                  }`}
-                >
-                  {item.value}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ul>
+        <Spring
+          force
+          config={{ tension: 2000, friction: 150, precision: 1 }}
+          from={{ height: !open ? 0 : 'auto' }}
+          to={{ height: open ? 'auto' : 0 }}
+        >
+          {(props) => (
+            <animated.ul
+              className={`dd-list ${open ? 'show' : ''}`}
+              style={props}
+            >
+              {items.map((item) => (
+                <li className='dd-list-item' key={item.id}>
+                  <button type='button' onClick={() => handleOnClick(item)}>
+                    <span
+                      className={`dd-list-item ${
+                        item.id === selection.id && 'selected'
+                      }`}
+                    >
+                      {item.value}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </animated.ul>
+          )}
+        </Spring>
       }
     </div>
   );

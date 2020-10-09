@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -17,6 +18,14 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader',
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   resolve: {
@@ -29,6 +38,7 @@ module.exports = {
   },
   plugins: [
     // new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([{ from: './js/assets', to: 'assets' }]),
     new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {

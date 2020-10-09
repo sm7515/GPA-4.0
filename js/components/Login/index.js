@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiUrl, baseUrl } from '../../../config';
 import Dropdown from '../Dropdown';
+import girl from '../../assets/img/girl.png';
+import boy from '../../assets/img/boy.png';
 import './index.css';
 
 export default function Login() {
@@ -42,29 +44,34 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className='form login'>
-      <div className='form__field'>
-        <label htmlFor='NetId'>
-          <span className='material-icons icon'>perm_identity</span>
-        </label>
-        <input
-          id='username'
-          type='text'
-          name='username'
-          className='form__input'
-          placeholder='Net Id'
-          required
+    <div className='login-wrapper'>
+      <img src={girl} className='girl' />
+      <img src={boy} className='boy' />
+
+      <form onSubmit={(e) => handleSubmit(e)} className='form login'>
+        <div className='form__field'>
+          <label htmlFor='NetId'>
+            <span className='material-icons icon'>perm_identity</span>
+          </label>
+          <input
+            id='username'
+            type='text'
+            name='username'
+            className='form__input'
+            placeholder='Net Id'
+            required
+          />
+        </div>
+        <Dropdown
+          setSelected={setSelected}
+          items={classes}
+          title='班级'
+          label={true}
         />
-      </div>
-      <Dropdown
-        setSelected={setSelected}
-        items={classes}
-        title='班级'
-        label={true}
-      />
-      <div className='form__field'>
-        <input type='submit' value='Sign In' />
-      </div>
-    </form>
+        <div className='form__field'>
+          <input type='submit' value='登陆' />
+        </div>
+      </form>
+    </div>
   );
 }
