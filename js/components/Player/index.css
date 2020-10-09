@@ -1,0 +1,78 @@
+.player-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-size: cover;
+  background-image: url('http://localhost:3000/api/static/img/grid.jpg');
+}
+
+.class-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: auto;
+  max-width: 80%;
+  background-color: #b14133;
+  color: #f4d9b6;
+  border: 10px solid #f4d9b6;
+  padding: 1rem;
+  border-radius: 45% 25%;
+}
+
+.class-wrapper svg {
+  display: block;
+}
+
+.class-wrapper button[editext='edit-button'],
+.class-wrapper button[editext='cancel-button'],
+.class-wrapper button[editext='save-button'] {
+  background-color: #e2d6c8;
+  padding: 0;
+  border: none;
+  border-radius: 80% 20% 100% 65%;
+  margin-left: 0.5rem;
+}
+
+.class-wrapper button[editext='save-button'] {
+  background-color: #006647;
+  color: #e2d6c8;
+  border-radius: 55% 40% 80% 100%;
+}
+.class-wrapper button[editext='cancel-button'] {
+  background-color: #e89f40;
+  color: #e2d6c8;
+}
+
+.class-wrapper input[editext='input'],
+.class-wrapper textarea[editext='input'] {
+  background: none;
+  border: none;
+  border-bottom: 1px dotted black;
+  padding: 0;
+}
+
+.class-wrapper div[editext='view-container'],
+.class-wrapper div[editext='edit-container'] {
+  margin: 1rem 0.8rem;
+}
+
+.class-wrapper .name-wrapper,
+.class-wrapper .concept-wrapper,
+.class-wrapper .rank-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.class-wrapper .rank-wrapper .rank {
+  text-decoration: underline;
+}
+
+.class-wrapper label,
+.class-wrapper .label {
+  font-weight: bold;
+}

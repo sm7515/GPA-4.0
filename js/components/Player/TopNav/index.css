@@ -1,0 +1,34 @@
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #af4233;
+  color: #eee;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem;
+}
+
+.hello-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.hello-wrapper .name {
+  text-decoration: underline;
+}
+
+.logout-wrapper .logout-button {
+  background: #295293;
+  border: none;
+  border-radius: 40% 100% 25% 80%;
+  color: #e2d6c8;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.logout-wrapper .logout-button:hover,
+.logout-wrapper .logout-button:focus {
+  background-color: #e2d6c8;
+  color: #295293;
+  outline: none;
+}

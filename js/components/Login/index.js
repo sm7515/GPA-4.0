@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiUrl, baseUrl } from '../../../config';
 import Dropdown from '../Dropdown';
-import girl from '../../assets/img/girl.png';
-import boy from '../../assets/img/boy.png';
 import './index.css';
 
 export default function Login() {
@@ -45,8 +43,8 @@ export default function Login() {
 
   return (
     <div className='login-wrapper'>
-      <img src={girl} className='girl' />
-      <img src={boy} className='boy' />
+      <img src={`${apiUrl}/static/img/girl.png`} className='girl' />
+      <img src={`${apiUrl}/static/img/boy.png`} className='boy' />
 
       <form onSubmit={(e) => handleSubmit(e)} className='form login'>
         <div className='form__field'>

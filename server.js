@@ -24,6 +24,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use('/api/static', express.static(path.join(__dirname, 'public/assets')));
+
 app.get('/app/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'), function (err) {
     if (err) {
@@ -51,6 +53,22 @@ app.get('/api/getClasses', (req, res) => {
     });
 });
 
+app.get('/api/getClass', (req, res) => {
+  const Class = mongoose.model('Class');
+
+  const { classId } = req.query;
+
+  Class.findOne({ classId }, (err, doc) => {
+    if (err) {
+      res.status(500).send('服务器错误 \ud83d\ude2d');
+    } else if (!doc) {
+      res.status(401).send('数据库查找错误 \uD83D\uDE30');
+    } else {
+      res.send(doc);
+    }
+  });
+});
+
 app.post('/api/updateScore', async (req, res) => {
   const Class = mongoose.model('Class');
 
@@ -61,6 +79,33 @@ app.post('/api/updateScore', async (req, res) => {
     { new: true },
   );
   if (doc) res.send(`成功更新 ${doc.className} 班积分至 ${doc.classScore}`);
+  else res.send(`更新失败 TAT`);
+});
+
+app.post('/api/updateClassName', async (req, res) => {
+  const Class = mongoose.model('Class');
+
+  const { name, classId } = req.body;
+  let doc = await Class.findOneAndUpdate(
+    { classId },
+    { $set: { className: name } },
+    { new: true },
+  );
+  if (doc) res.send(`成功更新 ${doc.className} `);
+  else res.send(`更新失败 TAT`);
+});
+
+app.post('/api/updateClassConcept', async (req, res) => {
+  const Class = mongoose.model('Class');
+
+  const { concept, classId } = req.body;
+  let doc = await Class.findOneAndUpdate(
+    { classId },
+    { $set: { classConcept: concept } },
+    { new: true },
+  );
+  if (doc)
+    res.send(`成功更新 ${doc.className} 的班级理念至 ${doc.classConcept}`);
   else res.send(`更新失败 TAT`);
 });
 
@@ -76,6 +121,22 @@ app.post('/api/addCourse', async (req, res) => {
   temp.save((err) => {
     if (err) res.send('添加失败 TAT');
     else res.send('添加成功！');
+  });
+});
+
+app.get('/api/getPlayer', (req, res) => {
+  const User = mongoose.model('User');
+
+  const { username } = req.query;
+  User.findOne({ username }, (err, user) => {
+    if (err) {
+      res.status(500).send('服务器错误 \ud83d\ude2d');
+    } else if (!user) {
+      console.log("user doesn't exist");
+      res.status(401).send('数据库查找错误 \uD83D\uDE30');
+    } else {
+      res.send(user);
+    }
   });
 });
 

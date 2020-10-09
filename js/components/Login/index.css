@@ -1,12 +1,7 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .login-wrapper {
   height: 100vh;
   background-size: cover;
-  background-image: url('../../assets/img/grid.jpg');
+  background-image: url('http://localhost:3000/api/static/img/grid.jpg');
 }
 
 @keyframes spin {
@@ -51,10 +46,10 @@
 img.girl {
   position: absolute;
   height: auto;
-  width: 50%;
+  width: 30%;
   max-height: 100%;
-  right: 0;
-  bottom: 0;
+  right: 1.5%;
+  bottom: 5%;
   animation-name: spin 2s linear infinite;
   -webkit-animation: spin 2s linear infinite;
   -moz-animation: spin 2s linear infinite;
@@ -63,7 +58,7 @@ img.girl {
 img.boy {
   position: absolute;
   height: auto;
-  width: 50%;
+  width: 30%;
   max-height: 100%;
   left: 0;
   animation-name: spin 2s linear infinite;
@@ -170,7 +165,6 @@ input[type='submit'] {
   img.girl {
     width: 60%;
     max-height: 100%;
-    right: 0;
     top: 40%;
   }
   .form__field input[type='submit'] {

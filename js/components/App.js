@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 import '../styles.css';
 
 import Login from './Login';
-import Course from './Course';
+import Player from './Player';
 import Admin from './Admin';
 
 export default function App() {
@@ -16,15 +16,15 @@ export default function App() {
             Cookies.get('role') === 'admin' ? (
               <Redirect to='/app/admin' />
             ) : (
-              <Redirect to='/app/course' />
+              <Redirect to='/app/player' />
             )
           ) : (
             <Login />
           )}
         </Route>
-        <Route path='/app/course'>
+        <Route path='/app/player'>
           {Cookies.get('role') === 'player' && Cookies.get('username') ? (
-            <Course />
+            <Player />
           ) : (
             <Redirect to='/' />
           )}

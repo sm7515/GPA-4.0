@@ -1,0 +1,19 @@
+.bottom-nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #295293;
+  color: #eee;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.bottom-nav-item {
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+}
+
+.bottom-nav-item.selected {
+  color: #295293;
+  background-color: #e2d6c8;
+}
