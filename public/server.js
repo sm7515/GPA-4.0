@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
-import './db';
+require('./db');
 
 const app = express();
 const port = process.env.PORT || 3000;
