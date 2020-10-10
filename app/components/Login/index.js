@@ -47,7 +47,7 @@ export default function Login() {
       <img src={`${apiUrl}/static/img/boy.png`} className='boy' />
 
       <form onSubmit={(e) => handleSubmit(e)} className='form login'>
-        <div className='form__field'>
+        <div className='form__field name'>
           <label htmlFor='NetId'>
             <span className='material-icons icon'>perm_identity</span>
           </label>

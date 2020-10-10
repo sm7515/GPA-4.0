@@ -1,7 +1,7 @@
 .login-wrapper {
   height: 100vh;
   background-size: cover;
-  background-image: url('http://localhost:3000/api/static/img/grid.jpg');
+  background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
 }
 
 @keyframes spin {
@@ -167,7 +167,61 @@ input[type='submit'] {
     max-height: 100%;
     top: 40%;
   }
-  .form__field input[type='submit'] {
-    opacity: 0.8;
+
+  .form.login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 20rem;
+    width: 90%;
+    transform: translateY(60%);
+  }
+
+  input {
+    background-image: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+    -webkit-appearance: none;
+  }
+
+  .login input[type='submit'] {
+    background-color: #e89f40;
+    color: #eee;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    -webkit-appearance: none;
+  }
+
+  .login input[type='submit']:focus,
+  .login input[type='submit']:hover {
+    background-color: #f5af53;
+  }
+
+  .form__input,
+  .login input[type='submit'] {
+    flex: 1;
+  }
+
+  .form__field {
+    display: flex;
+    margin: 0.875rem;
+    width: 100%;
+  }
+
+  .form__field.name .form__input {
+    width: 50%;
+  }
+
+  .login-wrapper {
+    height: 100vh;
+    background-size: cover;
+    background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
   }
 }
