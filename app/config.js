@@ -1,4 +1,3 @@
-export const apiUrl = 'https://gpa-4-0.herokuapp.com/api';
-export const baseUrl = 'https://gpa-4-0.herokuapp.com/app';
-// export const baseUrl = 'http://localhost:3000/app';
-// export const apiUrl = 'http://localhost:3000/api';
+const homepage = 'https://www.cssanyu.org/2020/GPA-4.0'
+export const apiUrl = homepage + '/api';
+export const baseUrl = homepage + '/app';

@@ -10,8 +10,8 @@ import Admin from './Admin';
 export default function App() {
   return (
     <div className='app'>
-      <Router>
-        <Route path={['/', '/app/']}>
+      <Router basename="/2020/GPA-4.0/">
+        <Route exact path={['/', '/app/']}>
           {Cookies.get('username') ? (
             Cookies.get('role') === 'admin' ? (
               <Redirect to='/app/admin' />
@@ -22,7 +22,7 @@ export default function App() {
             <Login />
           )}
         </Route>
-        <Route path='/app/player'>
+        <Route exact path='/app/player'>
           {Cookies.get('role') === 'player' && Cookies.get('username') ? (
             <Player />
           ) : (
