@@ -35,6 +35,8 @@ export default function ClassInfo({ classId, apiUrl, className }) {
   return (
     <div>
       <div className='class-wrapper'>
+        <span className='dot up'></span>
+        <span className='dot bottom'></span>
         <div className='name-wrapper'>
           <label htmlFor='className'>班级姓名：</label>
           <EdiText
