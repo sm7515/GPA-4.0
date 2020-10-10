@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node ./public/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/webpack --watch --mode development",
-    "build": "./node_modules/.bin/webpack --mode production"
+    "dev": "./node_modules/.bin/webpack --watch --config webpack.dev.js --mode development",
+    "build": "./node_modules/.bin/webpack --config webpack.prod.js --mode production"
   },
   "author": "",
   "license": "ISC",
@@ -40,11 +40,15 @@
     "copy-webpack-plugin": "^6.2.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.1",
+    "mini-css-extract-plugin": "^1.0.0",
     "nodemon": "^2.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.2.3",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.2.0"
   }
 }

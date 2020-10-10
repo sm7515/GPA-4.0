@@ -49,16 +49,5 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/public/assets',
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [{ from: './js/assets', to: 'assets' }],
-    // }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  devServer: {
-    contentBase: './public',
-    hot: true,
-    historyApiFallback: true,
-  },
+  plugins: [new CleanWebpackPlugin()],
 };

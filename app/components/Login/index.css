@@ -219,6 +219,10 @@ input[type='submit'] {
     width: 50%;
   }
 
+  .form__field input[type='submit'] {
+    opacity: 0.8;
+  }
+
   .login-wrapper {
     height: 100vh;
     background-size: cover;
