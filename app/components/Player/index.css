@@ -50,6 +50,7 @@
   border: none;
   border-bottom: 1px dashed black;
   padding: 0;
+  color: #f4d9b6;
 }
 
 .class-wrapper div[editext='view-container'],

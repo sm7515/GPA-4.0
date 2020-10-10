@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'js', 'index.js'),
+  entry: path.join(__dirname, 'app', 'index.js'),
   module: {
     rules: [
       {
@@ -47,7 +47,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public/build'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/public/assets',
   },
   plugins: [
     new CleanWebpackPlugin(),

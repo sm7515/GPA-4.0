@@ -24,10 +24,10 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/api/static', express.static(path.join(__dirname, 'public/assets')));
+app.use('/api/static', express.static(path.join(__dirname, '/assets')));
 
 app.get('/app/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'), function (err) {
+  res.sendFile(path.join(__dirname, 'index.html'), function (err) {
     if (err) {
       res.status(500).send(err);
     }
@@ -84,6 +84,7 @@ app.post('/api/updateScore', async (req, res) => {
 
 app.post('/api/updateClassName', async (req, res) => {
   const Class = mongoose.model('Class');
+  const User = mongoose.model('User');
 
   const { name, classId } = req.body;
   let doc = await Class.findOneAndUpdate(
@@ -91,7 +92,13 @@ app.post('/api/updateClassName', async (req, res) => {
     { $set: { className: name } },
     { new: true },
   );
-  if (doc) res.send(`成功更新 ${doc.className} `);
+
+  let doc2 = await User.findOneAndUpdate(
+    { classId },
+    { $set: { className: name } },
+    { new: true },
+  );
+  if (doc && doc2) res.send(`成功更新 ${doc.className} `);
   else res.send(`更新失败 TAT`);
 });
 

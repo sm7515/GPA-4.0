@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { apiUrl, baseUrl } from '../../../config';
+import { apiUrl, baseUrl } from '../../config';
 import './index.css';
 
 import Dropdown from '../Dropdown';

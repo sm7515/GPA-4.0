@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { apiUrl, baseUrl } from '../../../config';
+import { apiUrl, baseUrl } from '../../config';
 import Dropdown from '../Dropdown';
 import './index.css';
 
