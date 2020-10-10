@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import TopNav from './TopNav';
 import BottomNav from './BottomNav';
 import ClassInfo from './ClassInfo';
+import CourseInfo from './CourseInfo';
 import './index.css';
 
 export default function Player() {
@@ -33,7 +34,9 @@ export default function Player() {
             />
           )
         );
-
+      case '必修课':
+      case '选修课':
+        return <CourseInfo type={option} apiUrl={apiUrl}></CourseInfo>;
       default:
         break;
     }

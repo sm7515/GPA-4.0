@@ -57,7 +57,7 @@ export default function ClassInfo({ classId, apiUrl, className }) {
           <span className='label'>班级排名：</span>
           <Transition
             items={banji && banji.rank}
-            trail={1000}
+            trail={600}
             from={{ transform: 'translate3d(0,1000px,0)' }}
             enter={{ transform: 'translate3d(0,0px,0)' }}
           >

@@ -48,7 +48,7 @@
 .class-wrapper textarea[editext='input'] {
   background: none;
   border: none;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dashed black;
   padding: 0;
 }
 
@@ -75,4 +75,73 @@
 .class-wrapper label,
 .class-wrapper .label {
   font-weight: bold;
+}
+
+.course-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.date-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #af4233;
+  color: #e2d6c8;
+  flex-wrap: wrap;
+}
+
+.date-nav-item {
+  padding: 0.5rem 1rem;
+}
+
+.date-nav-item.selected {
+  color: #af4233;
+  background: #e2d6c8;
+}
+
+.courses {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto;
+  justify-content: flex-start;
+  padding: 2rem 0;
+  width: 350px;
+}
+
+.course-item {
+  margin: 0.8rem 0;
+  width: 100%;
+  position: relative;
+  border: 1px dashed black;
+  padding: 0.3rem 0.5rem;
+}
+
+.course-item .show {
+  height: auto;
+  transition: height 4s ease;
+  -webkit-transition: height 0.3s ease;
+}
+
+.course-item .hide {
+  height: 0;
+  overflow: hidden;
+  transition: height 4s ease;
+  -webkit-transition: height 4s ease;
+}
+
+.course-item button {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.course-item > div {
+  margin: 0.3rem 0;
 }

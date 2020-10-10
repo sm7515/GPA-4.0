@@ -124,6 +124,16 @@ app.post('/api/addCourse', async (req, res) => {
   });
 });
 
+app.get('/api/getCourses', async (req, res) => {
+  const Course = mongoose.model('Course');
+  const { type } = req.query;
+
+  let docs = await Course.find({ type }).sort({ date: 1 });
+  if (docs) {
+    res.send(docs);
+  } else res.status(401).send('数据库查找错误 \uD83D\uDE30');
+});
+
 app.get('/api/getPlayer', (req, res) => {
   const User = mongoose.model('User');
 
