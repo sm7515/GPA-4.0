@@ -12,10 +12,7 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
+
       {
         test: /\.(png|jpg)$/,
         loader: 'url-loader',
@@ -42,9 +39,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: path.join(__dirname, 'public/build'),
+    path: path.join(__dirname, 'public/build/'),
     filename: 'bundle.js',
-    publicPath: '/public/assets',
+    publicPath: '/public/assets/',
   },
   plugins: [new CleanWebpackPlugin()],
 };

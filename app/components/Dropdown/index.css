@@ -1,6 +1,8 @@
 .dd-container {
   width: 100%;
   margin: 0.875rem;
+  max-height: 100px;
+  z-index: 1;
 }
 
 .dd-wrapper {
@@ -49,6 +51,7 @@
   flex-direction: column;
   align-items: flex-end;
   overflow-y: scroll;
+  max-height: 200px;
 }
 
 .dd-container li {
