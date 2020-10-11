@@ -1,6 +1,7 @@
 # Deployment directories
 node_modules
 public/build
+app/config.js
 
 # env
 .evn
