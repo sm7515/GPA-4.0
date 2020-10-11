@@ -16,9 +16,25 @@
     justify-content: flex-start;
     height: 100vh;
     background-size: cover;
-    max-height: 100vh;
-    overflow: scroll;
     background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
+  }
+  .course-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    overflow-y: scroll;
+  }
+  .date-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: #af4233;
+    color: #e2d6c8;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
   }
 }
 
