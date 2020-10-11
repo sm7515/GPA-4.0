@@ -26,6 +26,7 @@
     flex: 1;
     position: relative;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   .date-nav {
     display: flex;
@@ -45,7 +46,7 @@
     align-items: flex-start;
     margin: auto;
     justify-content: flex-start;
-    padding: 5rem 0;
+    padding: 5rem 0 10rem 0;
     width: 350px;
   }
 }
