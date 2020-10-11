@@ -30,7 +30,7 @@ export default function Login() {
         .then((res) => {
           console.log(res);
           const role = res.data;
-          const url = role === 'admin' ? 'admin' : 'course';
+          const url = role === 'admin' ? 'admin' : 'player';
           console.log(`${baseUrl}/${url}`);
           window.location.replace(`${baseUrl}/${url}`);
         })

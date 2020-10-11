@@ -10,5 +10,13 @@ module.exports = merge(common, {
     hot: true,
     historyApiFallback: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });

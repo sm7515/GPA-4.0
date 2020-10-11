@@ -78,8 +78,41 @@ app.post('/api/updateScore', async (req, res) => {
     { $set: { classScore: score } },
     { new: true },
   );
-  if (doc) res.send(`成功更新 ${doc.className} 班积分至 ${doc.classScore}`);
-  else res.send(`更新失败 TAT`);
+  if (doc) {
+    res.send(`成功更新 ${doc.className} 班积分至 ${doc.classScore}`);
+    let docs = await Class.find({ classId: { $ne: 0 } }).sort({
+      classScore: -1,
+    });
+
+    docs = docs.map((ele) => ({
+      id: ele.classId,
+      rank: ele.rank,
+      score: ele.classScore,
+    }));
+
+    docs[0].rank = 1;
+    let prev = docs[0];
+    let count = 1;
+    for (let i = 1; i < docs.length; i++) {
+      let cur = docs[i];
+      if (cur.score !== prev.score) {
+        count++;
+        prev = cur;
+      }
+      docs[i].rank = count;
+    }
+
+    for (let i = 0; i < docs.length; i++) {
+      let cur = docs[i];
+      let doc2 = await Class.findOneAndUpdate(
+        { classId: cur.id },
+        { $set: { rank: cur.rank } },
+        { new: true },
+      );
+      if (doc2) continue;
+      else console.log('err');
+    }
+  } else res.send(`更新失败 TAT`);
 });
 
 app.post('/api/updateClassName', async (req, res) => {
