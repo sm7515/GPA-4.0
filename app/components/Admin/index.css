@@ -148,9 +148,12 @@
     font-size: 12px;
   }
 
+  button {
+    -webkit-appearance: none;
+  }
+
   .admin.nav-item.logout button.logout {
     top: 1.5rem;
-    -webkit-appearance: none;
     color: #434a52;
     background-color: #eee;
   }
@@ -158,8 +161,9 @@
     flex: 1;
     flex-wrap: wrap;
   }
-  .update-course .form__field input {
-    width: 50%;
+  .update-course .form__field input,
+  .update-score input {
+    width: 40%;
   }
   .class-col {
     flex: 2;
