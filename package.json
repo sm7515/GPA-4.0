@@ -26,8 +26,7 @@
     "react-editext": "^3.17.1",
     "react-onclickoutside": "^6.9.0",
     "react-router-dom": "^5.2.0",
-    "react-spring": "^8.0.27",
-    "react-transition-group": "^4.4.1"
+    "react-spring": "^8.0.27"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
@@ -40,9 +39,7 @@
     "copy-webpack-plugin": "^6.2.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.1",
-    "mini-css-extract-plugin": "^1.0.0",
     "nodemon": "^2.0.4",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.2.3",
     "url-loader": "^4.1.0",

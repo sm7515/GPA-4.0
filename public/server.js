@@ -93,11 +93,15 @@ app.post('/api/updateScore', async (req, res) => {
     docs[0].rank = 1;
     let prev = docs[0];
     let count = 1;
+    let dup = 1;
     for (let i = 1; i < docs.length; i++) {
       let cur = docs[i];
       if (cur.score !== prev.score) {
-        count++;
+        count += dup;
         prev = cur;
+        dup = 1;
+      } else {
+        dup++;
       }
       docs[i].rank = count;
     }
