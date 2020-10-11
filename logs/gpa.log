@@ -1,0 +1,6 @@
+
+> GPA-4-0@1.0.0 start /home/changgeng/GPA-4.0
+> node ./public/server.js
+
+listening on port 3000
+database connected
