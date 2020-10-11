@@ -15,6 +15,8 @@
     flex-direction: column;
     justify-content: flex-start;
     height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     background-size: cover;
     background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
   }
@@ -35,6 +37,16 @@
     position: fixed;
     z-index: 1;
     width: 100%;
+  }
+  .courses {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    justify-content: flex-start;
+    padding: 5rem 0;
+    width: 350px;
   }
 }
 
