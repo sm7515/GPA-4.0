@@ -51,6 +51,9 @@ export default function CourseInfo({ type, apiUrl }) {
           })}
       </div>
       <div className='courses'>
+        <img className='bg-img r2' src={`${apiUrl}/static/img/ruler.png`} />
+        <img className='bg-img b1' src={`${apiUrl}/static/img/book.png`} />
+        <img className='bg-img c1' src={`${apiUrl}/static/img/clock.png`} />
         {courses &&
           courses.map((ele, i) => {
             if (ele.date === selectedDate) {

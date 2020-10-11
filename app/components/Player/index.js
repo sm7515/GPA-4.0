@@ -7,6 +7,7 @@ import TopNav from './TopNav';
 import BottomNav from './BottomNav';
 import ClassInfo from './ClassInfo';
 import CourseInfo from './CourseInfo';
+import LeaderBoard from './LeaderBoard';
 import './index.css';
 
 export default function Player() {
@@ -37,6 +38,8 @@ export default function Player() {
       case '必修课':
       case '选修课':
         return <CourseInfo type={option} apiUrl={apiUrl}></CourseInfo>;
+      case '光荣榜':
+        return <LeaderBoard apiUrl={apiUrl}></LeaderBoard>;
       default:
         break;
     }

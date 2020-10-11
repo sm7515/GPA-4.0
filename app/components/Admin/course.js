@@ -8,14 +8,18 @@ export default function CourseInfo({ tab }) {
   const [name, setName] = useState('');
   const [score, setScore] = useState('');
   const [category, setCategory] = useState({});
-  const [date, setDate] = useState(undefined);
+  const [date, setDate] = useState('');
   const [intro, setIntro] = useState('');
   const [req, setReq] = useState('');
 
   const handleSubmit = (e) => {
+    let year = date && date.split('-')[0];
+
     e.preventDefault();
     if (isNaN(parseInt(score))) {
       alert('请输入正确的积分哦 \uD83D\uDE0A');
+    } else if (year !== '2020') {
+      alert('请选择今年的日期哦 \uD83D\uDE0A');
     } else if (tab === '选修课' && !category.value) {
       alert('请选择课程类别哦 \uD83D\uDE0A');
     } else {
@@ -26,7 +30,6 @@ export default function CourseInfo({ tab }) {
         course.category = category.value;
         course.req = req;
       }
-      console.log(course);
       axios
         .post(`${apiUrl}/addCourse`, { course })
         .then((res) => alert(res.data))
