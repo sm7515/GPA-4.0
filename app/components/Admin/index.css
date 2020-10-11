@@ -117,6 +117,7 @@
   flex-direction: column;
   flex: 1;
   transform: none;
+  align-items: center;
 }
 
 .update-course .form__field {
@@ -124,7 +125,7 @@
 }
 
 .update-course .form__field label {
-  margin: 0 0.875rem;
+  margin: 0 0.875rem 0 0;
 }
 
 .update-course .form__field input,
@@ -148,7 +149,8 @@
     font-size: 12px;
   }
 
-  button {
+  button,
+  input {
     -webkit-appearance: none;
   }
 
@@ -159,13 +161,17 @@
   }
   .update-score {
     flex: 1;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
+  .update-course .form__field,
   .update-course .form__field input,
   .update-score input {
-    width: 40%;
+    width: 80%;
   }
+
   .class-col {
-    flex: 2;
+    flex: 0.5;
   }
 }
