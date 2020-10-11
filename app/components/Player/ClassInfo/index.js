@@ -33,44 +33,42 @@ export default function ClassInfo({ classId, apiUrl, className }) {
   };
 
   return (
-    <div>
-      <div className='class-wrapper'>
-        <span className='dot up'></span>
-        <span className='dot bottom'></span>
-        <div className='name-wrapper'>
-          <label htmlFor='className'>班级姓名：</label>
-          <EdiText
-            type='text'
-            value={name}
-            inputProps={{ name: 'className' }}
-            onSave={handleSaveName}
-          />
-        </div>
-        <div className='concept-wrapper'>
-          <label htmlFor='concept'>班级理念：</label>
-          <EdiText
-            type='textarea'
-            value={concept}
-            inputProps={{ name: 'concept' }}
-            onSave={handleSaveConcept}
-          />
-        </div>
-        <div className='rank-wrapper'>
-          <span className='label'>班级排名：</span>
-          <Transition
-            items={banji && banji.rank}
-            trail={600}
-            from={{ transform: 'translate3d(0,1000px,0)' }}
-            enter={{ transform: 'translate3d(0,0px,0)' }}
-          >
-            {(item) => (props) => (
-              <animated.div className='rank' style={props}>
-                &nbsp;&nbsp;{item}&nbsp;&nbsp;
-              </animated.div>
-            )}
-          </Transition>
-          <span className='label'>&nbsp;名</span>
-        </div>
+    <div className='class-wrapper'>
+      <span className='dot up'></span>
+      <span className='dot bottom'></span>
+      <div className='name-wrapper'>
+        <label htmlFor='className'>班级姓名：</label>
+        <EdiText
+          type='text'
+          value={name}
+          inputProps={{ name: 'className' }}
+          onSave={handleSaveName}
+        />
+      </div>
+      <div className='concept-wrapper'>
+        <label htmlFor='concept'>班级理念：</label>
+        <EdiText
+          type='textarea'
+          value={concept}
+          inputProps={{ name: 'concept' }}
+          onSave={handleSaveConcept}
+        />
+      </div>
+      <div className='rank-wrapper'>
+        <span className='label'>班级排名：</span>
+        <Transition
+          items={banji && banji.rank}
+          trail={500}
+          from={{ transform: 'translate3d(0,-400px,0)' }}
+          enter={{ transform: 'translate3d(0,0px,0)' }}
+        >
+          {(item) => (props) => (
+            <animated.div className='rank' style={props}>
+              &nbsp;&nbsp;{item}&nbsp;&nbsp;
+            </animated.div>
+          )}
+        </Transition>
+        <span className='label'>&nbsp;名</span>
       </div>
     </div>
   );

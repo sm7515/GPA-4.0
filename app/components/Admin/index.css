@@ -4,6 +4,15 @@
   height: 100vh;
 }
 
+.admin.container .dd-container {
+  max-height: none;
+}
+
+.admin.container .dd-container button {
+  padding: 0.5rem;
+  font-size: small;
+}
+
 .admin.nav {
   background-color: #363b41;
   color: #eee;

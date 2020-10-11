@@ -37,20 +37,36 @@ app.get('/app/*', function (req, res) {
 app.get('/api/getClasses', (req, res) => {
   const Class = mongoose.model('Class');
 
-  const { exludeAdmin } = req.query;
-
+  const { exludeAdmin, rank } = req.query;
   let docs = [];
-  Class.find({})
-    .sort({ classId: 1 })
-    .then((data) => {
-      if (exludeAdmin)
+
+  if (rank) {
+    Class.find({})
+      .sort({ rank: 1 })
+      .then((data) => {
         docs = data
           .filter((ele) => ele.classId !== 0)
-          .map((ele) => ({ id: ele.classId, value: ele.className }));
-      else
-        docs = data.map((ele) => ({ id: ele.classId, value: ele.className }));
-      res.send(docs);
-    });
+          .map((ele) => ({
+            id: ele.classId,
+            name: ele.className,
+            rank: ele.rank,
+            score: ele.classScore,
+          }));
+        res.send(docs);
+      });
+  } else {
+    Class.find({})
+      .sort({ classId: 1 })
+      .then((data) => {
+        if (exludeAdmin)
+          docs = data
+            .filter((ele) => ele.classId !== 0)
+            .map((ele) => ({ id: ele.classId, value: ele.className }));
+        else
+          docs = data.map((ele) => ({ id: ele.classId, value: ele.className }));
+        res.send(docs);
+      });
+  }
 });
 
 app.get('/api/getClass', (req, res) => {
