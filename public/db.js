@@ -6,8 +6,6 @@ const userSchema = new mongoose.Schema({
   name: String,
   classId: Number,
   className: String,
-  score: Number,
-  classScore: Number,
   role: String,
   createdAt: { type: Date, default: Date.now },
 });
