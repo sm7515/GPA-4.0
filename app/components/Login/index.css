@@ -1,7 +1,7 @@
 .login-wrapper {
   height: 100vh;
   background-size: cover;
-  background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
+  background-image: url('https://www.cssanyu.org/2020/GPA-4.0/api/static/img/grid.jpg');
 }
 
 @keyframes spin {
@@ -130,6 +130,7 @@ input[type='submit'] {
   background-color: #295293;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  width:100%;
 }
 
 .login input[type='text']::placeholder {
@@ -164,12 +165,12 @@ input[type='submit'] {
 @media only screen and (max-width: 600px) {
   img.boy {
     z-index: 1;
-    width: 45%;
+    width: 60%;
   }
   img.girl {
     width: 60%;
     max-height: 100%;
-    top: 40%;
+    top: 45%;
   }
 
   .form.login {
@@ -180,7 +181,7 @@ input[type='submit'] {
     margin: auto;
     max-width: 20rem;
     width: 90%;
-    transform: translateY(60%);
+    transform: translateY(80%);
   }
 
   input {

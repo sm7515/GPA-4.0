@@ -59,7 +59,7 @@ export default function ClassInfo({ classId, apiUrl, className }) {
         <Transition
           items={banji && banji.rank}
           trail={500}
-          from={{ transform: 'translate3d(0,-400px,0)' }}
+          from={{ transform: 'translate3d(0,-1000px,0)' }}
           enter={{ transform: 'translate3d(0,0px,0)' }}
         >
           {(item) => (props) => (

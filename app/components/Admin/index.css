@@ -181,6 +181,7 @@
   }
 
   .class-col {
+	overflow-y:scroll;
     flex: 0.5;
   }
 }

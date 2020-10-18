@@ -6,7 +6,7 @@
   background-size: cover;
   max-height: 100vh;
   overflow: scroll;
-  background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
+  background-image: url('https://www.cssanyu.org/2020/GPA-4.0/api/static/img/grid.jpg');
 }
 
 @media only screen and (max-width: 600px) {
@@ -18,16 +18,16 @@
     max-height: 100vh;
     overflow: hidden;
     background-size: cover;
-    background-image: url('https://gpa-4-0.herokuapp.com/api/static/img/grid.jpg');
+    background-image: url('https://www.cssanyu.org/2020/GPA-4.0/api/static/img/grid.jpg');
   }
   .course-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
-    padding-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .date-nav {
     display: flex;
@@ -47,8 +47,9 @@
     align-items: flex-start;
     margin: auto;
     justify-content: flex-start;
-    padding: 5rem 0 10rem 0;
+    padding: 5rem 0;
     width: 350px;
+    margin-bottom: 10rem;
   }
 }
 
@@ -147,6 +148,7 @@
   flex: 1;
   position: relative;
   overflow-y: scroll;
+  margin-bottom:2rem;
 }
 
 .date-nav {
